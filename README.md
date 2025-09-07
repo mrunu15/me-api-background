@@ -111,3 +111,5 @@ Single-profile support only
 Some endpoints assume data exists; empty DB may return 404
 
 GET /health → simple health check
+
+resume link: https://drive.google.com/file/d/1xb2dpB_sUFgj0907sZyHxcQE-T0y7xxt/view?usp=drive_link
