@@ -3,7 +3,7 @@ const router = express.Router();
 const Profile = require("../models/profile.model");
 
 // GET full profile
-router.get("/api/profile", async (req, res) => {
+router.get("/profile", async (req, res) => {
   try {
     const profile = await Profile.findOne({});
     if (!profile) return res.status(404).json({ message: "Profile not found" });
@@ -14,7 +14,7 @@ router.get("/api/profile", async (req, res) => {
 });
 
 // GET projects (optionally filter by skill)
-router.get("/api/projects", async (req, res) => {
+router.get("/projects", async (req, res) => {
   try {
     const skill = req.query.skill;
     const profile = await Profile.findOne({});
@@ -37,7 +37,7 @@ router.get("/api/projects", async (req, res) => {
 
 
 // GET top skills
-router.get("/api/skills/top", async (req, res) => {
+router.get("/skills/top", async (req, res) => {
   try {
     const profile = await Profile.findOne({});
     if (!profile) return res.status(404).json({ message: "Profile not found" });
@@ -52,7 +52,7 @@ router.get("/api/skills/top", async (req, res) => {
 });
 
 // GET search
-router.get("/api/search", async (req, res) => {
+router.get("/search", async (req, res) => {
   try {
     const q = req.query.q?.toLowerCase();
     const profile = await Profile.findOne({});
